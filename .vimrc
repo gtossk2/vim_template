@@ -98,7 +98,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
 " Auto change the current directory
-" set autochdir
+set autochdir
 
 map<f3> :Tlist<CR>
 let Tlist_Show_One_File = 1 " Displaying tags for only one file~
@@ -112,3 +112,6 @@ let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
 let Tlist_Close_On_Select = 0 " Close the taglist window when a file or tag is selected.
 let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
 let Tlist_WinWidth = 40
+
+" Set tag path
+set tags=./tags,tags;
