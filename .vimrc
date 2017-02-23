@@ -114,4 +114,22 @@ let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the t
 let Tlist_WinWidth = 40
 
 " Set tag path
-set tags=./tags,tags;
+set tags=./tags,./TAGS,tags;~,TAGS;~
+
+" Set mouse enable
+set mouse=a
+
+" Set Nerd Tree
+nmap <F9> :NERDTreeFind<CR><CR>
+let NERDTreeWinPos=1
+
+" Set SrcExl
+nmap <F10> :SrcExplToggle<CR>
+let g:SrcExpl_winHeight=16
+let g:SrcExpl_pluginList = [
+    \"__Tag_List__",
+    \"_NERD_tree_"
+\]
+
+" Set Trinity
+nmap <F7> :TrinityToggleAll
