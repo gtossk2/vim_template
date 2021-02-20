@@ -65,8 +65,8 @@ set showmode
 set showcmd
 
 " Searching
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 set hlsearch
 set incsearch
 set ignorecase
@@ -98,7 +98,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
 " Auto change the current directory
-set autochdir
+" set autochdir
 
 map<f3> :Tlist<CR>
 let Tlist_Show_One_File = 1 " Displaying tags for only one file~
@@ -114,14 +114,24 @@ let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the t
 let Tlist_WinWidth = 40
 
 " Set tag path
-set tags=./tags,./TAGS,tags;~,TAGS;~
+" set tags=./tags,./TAGS,tags;~,TAGS;~
 
 " Set mouse enable
-set mouse=a
+set mouse=
 
 " Set Nerd Tree
-nmap <F9> :NERDTreeFind<CR><CR>
+" nmap <F9> :NERDTreeFind<CR>
+nnoremap <silent> <expr> <F9> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
 let NERDTreeWinPos=1
+" let NERDTreeMapOpenInTab='\r'
+" let NERDTreeCustomOpenArgs={'file':{'where': 't'}}
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+
+" Close NERDTree if the only remaining window
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Set SrcExl
 nmap <F10> :SrcExplToggle<CR>
@@ -132,4 +142,17 @@ let g:SrcExpl_pluginList = [
 \]
 
 " Set Trinity
-nmap <F7> :TrinityToggleAll
+" nmap <F7> :TrinityToggleAll
+
+" Set Gtags
+set cscopeprg=gtags-cscope
+let s:command = "cs add GTAGS"
+exe s:command
+
+" Switch Tab
+nmap <C-l> gt
+nmap <C-h> gT
+
+" Copy to clipboard
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
