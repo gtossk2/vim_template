@@ -156,3 +156,17 @@ nmap <C-h> gT
 " Copy to clipboard
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
+
+nnoremap <C-Down> <C-w>j
+nnoremap <C-Up> <C-w>k
+nnoremap <C-Right> <C-w>l
+nnoremap <C-Left> <C-w>h
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when xterm-keys is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
