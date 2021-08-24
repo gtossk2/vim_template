@@ -157,10 +157,17 @@ nmap <C-h> gT
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
 
+" Moving split
 nnoremap <C-Down> <C-w>j
 nnoremap <C-Up> <C-w>k
 nnoremap <C-Right> <C-w>l
 nnoremap <C-Left> <C-w>h
+
+" Resizing split
+nmap <M-Right> :vertical resize +2<CR>
+nmap <M-Left> :vertical resize -2<CR>
+nmap <M-Down> :resize +2<CR>
+nmap <M-Up> :resize -2<CR>
 
 if &term =~ '^screen'
   " tmux will send xterm-style keys when xterm-keys is on
