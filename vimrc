@@ -24,6 +24,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'skywind3000/gutentags_plus'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,7 +86,7 @@ set encoding=utf-8
 
 " Whitespace
 set wrap
-set textwidth=79
+"set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=2
 set shiftwidth=2
@@ -151,7 +152,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
 " Auto change the current directory
-" set autochdir
+set autochdir
 
 " Switch Tab
 "nmap <C-l> gt
@@ -234,7 +235,7 @@ set tags=./.tags;,.tags
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_project_root = ['.root']
 
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
@@ -249,7 +250,7 @@ let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 " 如果使用 universal ctags 需要增加下面一行，老的 Exuberant-ctags 不能加下一行
-let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+" let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
 
 " 检测 ~/.cache/tags 不存在就新建
 if !isdirectory(s:vim_tags)
