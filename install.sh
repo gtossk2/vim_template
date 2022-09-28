@@ -5,8 +5,8 @@ ln -s .vim/vimrc .vimrc
 ln -s .vim/tmux.conf .tmux.conf
 
 # Install zsh wget git curl vim package
-echo "Install zsh wget git curl vim fontconfig package"
-sudo apt-get install zsh wget git curl vim fontconfig -y
+echo "Install zsh wget git curl vim fontconfig global package"
+sudo apt-get install zsh wget git curl vim fontconfig global -y
 
 # Install fonts for powerlevel10k : https://linoxide.com/install-fonts-on-ubuntu/
 mkdir -p ~/.local/share/fonts
