@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/gtossk2/stm32/example/stm32_discovery_arm_gcc/clock_demo'
-let g:netrw_dirhist_2='/home/gtossk2/stm32/example/STM32F429-Clock_Testing'
-let g:netrw_dirhist_3='/home/gtossk2/stm32/example/stm32_discovery_arm_gcc/clock_demo'
