@@ -26,6 +26,7 @@ Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mhinz/vim-grepper'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -346,4 +347,8 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
+
+" ==================== Grepper ===================
+let g:ctrlp_map = '<leader>g'
+let g:ctrlp_cmd = 'Grepper'
 
