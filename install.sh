@@ -9,8 +9,8 @@ ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 
 # Install zsh wget git curl vim package
-echo "Install zsh wget git curl vim fontconfig global package"
-sudo apt-get install zsh wget git curl vim fontconfig global -y
+echo "Install zsh wget git curl vim fontconfig global package tmux"
+sudo apt-get install zsh wget git curl vim fontconfig global tmux -y
 
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
