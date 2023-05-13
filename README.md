@@ -1,2 +1,5 @@
-# vim_template
-VIM template
+## Install
+
+```
+$> source install.sh
+```
