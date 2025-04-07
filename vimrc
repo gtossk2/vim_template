@@ -237,7 +237,7 @@ set tags=./.tags;,.tags
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
-let g:gutentags_project_root = ['.root']
+let g:gutentags_project_root = ['.root', '.git']
 
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
@@ -250,6 +250,14 @@ let g:gutentags_cache_dir = s:vim_tags
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+
+let g:gutentags_ctags_exclude = ['oe-workdir', 'oe-log']
+
+let g:gutentags_file_list_command = {
+    \ 'markers': {
+        \ '.git': 'git ls-files',
+        \ },
+    \ }
 
 " 如果使用 universal ctags 需要增加下面一行，老的 Exuberant-ctags 不能加下一行
 " let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
@@ -264,7 +272,7 @@ let g:gutentags_auto_add_gtags_cscope = 0
 "Change focus to quickfix window after search (optional).
 let g:gutentags_plus_switch = 1
 "Enable advanced commands: GutentagsToggleTrace, etc.
-let g:gutentags_define_advanced_commands = 1
+let g:gutentags_define_advanced_commands = 0
 let g:gutentags_trace = 0
 
 " set cscope find symbol
